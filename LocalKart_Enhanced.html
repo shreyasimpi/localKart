@@ -48,7 +48,8 @@
 
     button,
     input,
-    select {
+    select,
+    textarea {
       font: inherit;
       color: inherit
     }
@@ -514,13 +515,20 @@
     }
 
     input,
-    select {
+    select,
+    textarea {
       width: 100%;
       border: 1px solid #cfd3cd;
       border-radius: 10px;
       padding: 10px 12px;
       background: #fff;
-      margin-top: 4px
+      margin-top: 4px;
+      font: inherit
+    }
+
+    textarea {
+      min-height: 88px;
+      resize: vertical;
     }
 
     .two {
@@ -1013,20 +1021,1344 @@
         transition: background .15s, border-color .15s
       }
     }
+
+    /* LocalKart marketplace refresh: clean, warm, modern and responsive */
+    :root {
+      --ink: #202820;
+      --muted: #6c756d;
+      --paper: #f8f8f4;
+      --card: #fff;
+      --line: #e8e9e1;
+      --green: #176b4b;
+      --green-d: #104a35;
+      --gold: #f3b84b;
+      --tint: #eaf3eb;
+      --r: 18px
+    }
+
+    body {
+      background: #fafaf7;
+      color: var(--ink);
+      font-size: 15px
+    }
+
+    .site-header {
+      background: #fff;
+      color: var(--ink);
+      border-bottom: 1px solid #e9ece6;
+      box-shadow: 0 4px 18px rgba(27, 52, 34, .04)
+    }
+
+    .bar {
+      max-width: 1280px;
+      padding: 16px 26px 0;
+      gap: 22px;
+      display: grid;
+      grid-template-columns: auto auto minmax(230px, 1fr) auto;
+      align-items: center
+    }
+
+    .logo {
+      color: var(--green-d);
+      font-size: 1.55rem;
+      gap: 10px;
+      line-height: 1
+    }
+
+    .logo i {
+      background: #e7f3e9;
+      color: var(--green);
+      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      font-size: 1.3rem
+    }
+
+    .logo>span {
+      display: flex;
+      flex-direction: column;
+      gap: 4px
+    }
+
+    .logo-accent {
+      color: #d58b1d
+    }
+
+    .logo small {
+      font: 700 .55rem var(--body);
+      letter-spacing: .12em;
+      color: #8a9389
+    }
+
+    .location-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid #e8ece5;
+      border-radius: 12px;
+      white-space: nowrap
+    }
+
+    .pin-icon {
+      font-size: 1.5rem;
+      color: var(--green)
+    }
+
+    .location-pill small,
+    .location-pill strong {
+      display: block
+    }
+
+    .location-pill small {
+      font-size: .7rem;
+      color: var(--muted)
+    }
+
+    .location-pill strong {
+      font-size: .82rem;
+      color: #303d32
+    }
+
+    .header-search[hidden],
+    .header-actions[hidden] {
+      display: none !important
+    }
+
+    .header-search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      border: 1px solid #dfe5dc;
+      background: #f8faf7;
+      border-radius: 13px;
+      padding: 5px 6px 5px 14px;
+      height: 48px
+    }
+
+    .header-search>span {
+      font-size: 1.5rem;
+      color: #738175
+    }
+
+    .header-search input {
+      border: 0;
+      background: transparent;
+      outline: 0;
+      min-width: 0;
+      flex: 1;
+      font-size: .9rem
+    }
+
+    .header-search button {
+      border: 0;
+      border-radius: 9px;
+      background: var(--green);
+      color: #fff;
+      padding: 9px 16px;
+      font-weight: 700
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center
+    }
+
+    .header-actions a {
+      position: relative;
+      text-decoration: none;
+      color: #465248;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .85rem;
+      font-weight: 700;
+      white-space: nowrap
+    }
+
+    .header-actions a:first-child {
+      font-size: 1.25rem
+    }
+
+    .header-actions a span {
+      font-size: .8rem
+    }
+
+    .header-actions .header-cart {
+      background: #edf5ee;
+      padding: 10px 13px;
+      border-radius: 12px;
+      color: var(--green-d)
+    }
+
+    .header-cart b {
+      display: inline-grid;
+      place-items: center;
+      background: #e8a83b;
+      color: #243026;
+      border-radius: 50%;
+      min-width: 20px;
+      height: 20px;
+      font-size: .72rem;
+      padding: 0 4px
+    }
+
+    #mainNav {
+      grid-column: 1/-1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      padding: 12px 0 0;
+      border-top: 1px solid #f0f1ec;
+      flex-wrap: wrap
+    }
+
+    #mainNav[hidden] {
+      display: none
+    }
+
+    nav a {
+      color: #5c685e;
+      padding: 12px 16px;
+      border-radius: 10px 10px 0 0;
+      font-size: .9rem
+    }
+
+    nav a:hover {
+      background: #f4f8f3;
+      color: var(--green)
+    }
+
+    nav a.on {
+      background: #eaf4eb;
+      color: var(--green-d);
+      font-weight: 700
+    }
+
+    .out {
+      border: 1px solid #e2e7df;
+      background: #fff;
+      color: #5b675d;
+      padding: 8px 12px;
+      border-radius: 9px;
+      margin-left: auto
+    }
+
+    .sale {
+      background: #f8e7bf;
+      color: #5b461c;
+      font-size: .82rem;
+      padding: 8px
+    }
+
+    .hero {
+      background: linear-gradient(115deg, #edf5ec 0%, #f5f4e9 55%, #f8e8cb 100%);
+      border: 0;
+      overflow: hidden;
+      position: relative
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border: 1px solid rgba(23, 107, 75, .08);
+      border-radius: 50%;
+      right: -140px;
+      top: -200px;
+      box-shadow: 0 0 0 45px rgba(23, 107, 75, .025), 0 0 0 90px rgba(23, 107, 75, .02)
+    }
+
+    .hero .wrap {
+      max-width: 1280px;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 55px;
+      padding: 58px 26px 52px;
+      position: relative
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1
+    }
+
+    .eyebrow,
+    .section-kicker {
+      font-size: .7rem;
+      letter-spacing: .15em;
+      font-weight: 800;
+      color: #6a856b
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px
+    }
+
+    .eyebrow>span {
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      background: #d99a2d
+    }
+
+    .hero h1 {
+      font-size: clamp(2.65rem, 4.5vw, 4.5rem);
+      line-height: 1.03;
+      letter-spacing: -.055em;
+      color: #173d2a
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #bd7b20
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #627164;
+      max-width: 48ch;
+      margin: 20px 0 22px
+    }
+
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 19px;
+      border-radius: 12px;
+      background: #176b4b
+    }
+
+    .hero-button span,
+    .maker-button span {
+      font-size: 1.2rem
+    }
+
+    .hero-note {
+      font-size: .78rem;
+      color: #68766a
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 34px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(23, 61, 42, .13)
+    }
+
+    .hero-stats div {
+      display: flex;
+      flex-direction: column;
+      gap: 2px
+    }
+
+    .hero-stats strong {
+      font-size: 1.3rem;
+      color: #173d2a
+    }
+
+    .hero-stats span {
+      font-size: .72rem;
+      color: #6b786b
+    }
+
+    .hero-visual {
+      min-height: 350px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .hero-photo-main {
+      width: min(82%, 440px);
+      height: 350px;
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+      transform: rotate(2deg);
+      box-shadow: 0 22px 55px rgba(47, 68, 42, .18);
+      border: 7px solid rgba(255, 255, 255, .75)
+    }
+
+    .hero-photo-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .hero-photo-main:after {
+      content: "";
+      position: absolute;
+      inset: 35% 0 0;
+      background: linear-gradient(transparent, rgba(14, 36, 24, .76))
+    }
+
+    .photo-caption {
+      position: absolute;
+      z-index: 1;
+      left: 22px;
+      bottom: 22px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 5px
+    }
+
+    .photo-caption span {
+      font-size: .65rem;
+      letter-spacing: .15em;
+      font-weight: 800
+    }
+
+    .photo-caption strong {
+      font: 700 1.25rem var(--head);
+      max-width: 230px;
+      line-height: 1.15
+    }
+
+    .hero-float {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 12px 15px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 12px 35px rgba(27, 52, 34, .13)
+    }
+
+    .hero-float>span {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 11px;
+      background: #eaf4eb;
+      color: var(--green);
+      font-size: 1.2rem
+    }
+
+    .hero-float strong,
+    .hero-float small {
+      display: block
+    }
+
+    .hero-float strong {
+      font-size: .82rem
+    }
+
+    .hero-float small {
+      font-size: .68rem;
+      color: var(--muted)
+    }
+
+    .float-top {
+      top: 28px;
+      left: 0
+    }
+
+    .float-bottom {
+      right: -5px;
+      bottom: 28px
+    }
+
+    .hero-sticker {
+      position: absolute;
+      right: 3%;
+      top: 4%;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: #f4c65e;
+      color: #6b4a14;
+      display: grid;
+      align-content: center;
+      text-align: center;
+      font-size: .7rem;
+      font-weight: 900;
+      line-height: 1.15;
+      transform: rotate(11deg);
+      box-shadow: 0 8px 20px #a67c3025
+    }
+
+    .hero-sticker span {
+      font-size: 1rem
+    }
+
+    .promise-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #fff;
+      border: 1px solid #e9ece5;
+      border-radius: 16px;
+      margin-top: -1px;
+      box-shadow: 0 8px 25px rgba(40, 60, 38, .035);
+      position: relative;
+      z-index: 2
+    }
+
+    .promise-strip>div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 19px 20px;
+      border-right: 1px solid #eef0ea
+    }
+
+    .promise-strip>div:last-child {
+      border-right: 0
+    }
+
+    .promise-strip>div>span {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: #edf5ec;
+      color: var(--green);
+      font-size: 1.2rem
+    }
+
+    .promise-strip p {
+      display: flex;
+      flex-direction: column;
+      gap: 3px
+    }
+
+    .promise-strip strong {
+      font-size: .82rem
+    }
+
+    .promise-strip small {
+      font-size: .69rem;
+      color: var(--muted)
+    }
+
+    .wrap {
+      max-width: 1280px;
+      padding: 0 26px
+    }
+
+    .sec {
+      padding: 42px 0
+    }
+
+    .sec-h {
+      align-items: end;
+      margin-bottom: 22px
+    }
+
+    .sec-h h2 {
+      font-size: clamp(1.55rem, 2.5vw, 2rem);
+      letter-spacing: -.035em;
+      color: #26392b;
+      margin-top: 5px
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-top: 5px
+    }
+
+    .text-link {
+      color: var(--green);
+      font-size: .85rem;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap
+    }
+
+    .text-link span {
+      font-size: 1.1rem;
+      margin-left: 4px
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px
+    }
+
+    .category-tile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      background: var(--tile-bg);
+      border: 1px solid transparent;
+      border-radius: 16px;
+      padding: 16px 13px;
+      min-width: 0;
+      position: relative;
+      transition: transform .18s, box-shadow .18s
+    }
+
+    .category-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(33, 58, 37, .09)
+    }
+
+    .category-emoji {
+      font-size: 2.15rem;
+      filter: drop-shadow(0 3px 2px #0000000d)
+    }
+
+    .category-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0
+    }
+
+    .category-info strong {
+      font-size: .92rem
+    }
+
+    .category-info small {
+      font-size: .68rem;
+      color: #687468;
+      line-height: 1.3
+    }
+
+    .category-arrow {
+      position: absolute;
+      right: 10px;
+      top: 9px;
+      color: #6e826f;
+      font-size: .8rem
+    }
+
+    .featured-section {
+      padding-top: 18px
+    }
+
+    .pc {
+      border: 1px solid #e9ece5;
+      border-radius: 17px;
+      box-shadow: 0 4px 18px rgba(37, 57, 39, .035);
+      transition: transform .18s, box-shadow .18s
+    }
+
+    .pc:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 34px rgba(37, 57, 39, .1)
+    }
+
+    .pimg {
+      aspect-ratio: 4/3.2;
+      overflow: hidden;
+      background: #f1f3ed !important
+    }
+
+    .pimg img {
+      transition: transform .35s
+    }
+
+    .pc:hover .pimg img {
+      transform: scale(1.04)
+    }
+
+    .tag {
+      top: 12px;
+      left: 12px;
+      border-radius: 7px;
+      padding: 5px 9px;
+      font-size: .67rem;
+      box-shadow: 0 2px 7px #0000000b
+    }
+
+    .tag.in {
+      background: #e9f6e9;
+      color: #176b4b
+    }
+
+    .tag.low {
+      background: #fff1d4;
+      color: #885a10
+    }
+
+    .tag.out {
+      background: #fce9e7;
+      color: #b32c27
+    }
+
+    .product-category {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: #ffffffdf;
+      backdrop-filter: blur(6px);
+      border-radius: 7px;
+      padding: 5px 8px;
+      font-size: .64rem;
+      color: #526253;
+      font-weight: 700
+    }
+
+    .pb {
+      padding: 16px;
+      gap: 7px
+    }
+
+    .pb h3 {
+      font-size: 1.02rem;
+      line-height: 1.35;
+      min-height: 2.7em
+    }
+
+    .seller {
+      font-size: .78rem
+    }
+
+    .seller .btn {
+      font-size: .7rem
+    }
+
+    .rating {
+      font-size: .78rem;
+      color: #a56d13
+    }
+
+    .price {
+      font-size: 1.25rem;
+      color: #203c2a;
+      padding-top: 4px
+    }
+
+    .product-tools {
+      margin-top: 8px;
+      gap: 7px
+    }
+
+    .product-tools>.btn:first-child {
+      flex: 1
+    }
+
+    .product-tools .btn {
+      font-size: .78rem;
+      padding: 9px 10px
+    }
+
+    .heart {
+      font-size: .76rem
+    }
+
+    .maker-banner {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 28px 30px;
+      background: #e9f2e8;
+      border-radius: 20px;
+      margin: 16px 0 54px
+    }
+
+    .maker-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      background: #d5e8d5;
+      color: var(--green);
+      font-size: 2rem;
+      flex-shrink: 0
+    }
+
+    .maker-banner h2 {
+      font-size: 1.55rem;
+      color: #20442d;
+      margin: 4px 0
+    }
+
+    .maker-banner p {
+      font-size: .86rem;
+      color: #647465
+    }
+
+    .maker-button {
+      margin-left: auto;
+      white-space: nowrap;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 12px 17px
+    }
+
+    .search {
+      border-radius: 13px;
+      border-width: 1px
+    }
+
+    .search input {
+      padding: 13px 16px
+    }
+
+    .grid {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px
+    }
+
+    .btn {
+      border-radius: 11px;
+      transition: transform .16s, background .16s, box-shadow .16s
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 12px rgba(16, 74, 53, .12)
+    }
+
+    .chip {
+      padding: 9px 15px;
+      border-radius: 10px
+    }
+
+    .shop-card {
+      border: 1px solid #e8ece5;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(37, 57, 39, .035)
+    }
+
+    .login {
+      background: radial-gradient(ellipse at top left, #e8f3e8, transparent 60%), #f8f8f4
+    }
+
+    .lbox {
+      border: 1px solid #e7ebe3;
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(37, 57, 39, .08)
+    }
+
+    footer {
+      background: #f0f3ec;
+      color: #69766a;
+      border-top: 1px solid #e5e9df;
+      padding: 25px 20px;
+      font-size: .8rem
+    }
+
+    .cart {
+      gap: 28px
+    }
+
+    .sum {
+      border: 1px solid #e7ebe3;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(37, 57, 39, .05);
+      padding: 22px
+    }
+
+    .sum .btn {
+      width: 100%;
+      margin-top: 14px;
+      padding: 13px
+    }
+
+    .sum input,
+    .sum textarea,
+    .sum select {
+      border: 1px solid #dfe5dc;
+      border-radius: 10px;
+      padding: 11px 12px;
+      background: #fff;
+      width: 100%;
+      margin: 5px 0 13px
+    }
+
+    .sum label {
+      font-size: .82rem;
+      font-weight: 700
+    }
+
+    .payment-note {
+      display: block;
+      line-height: 1.45;
+      margin: 0 0 10px
+    }
+
+    .delivery-promise {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px;
+      background: #edf5ec;
+      border-radius: 11px;
+      margin-top: 12px
+    }
+
+    .delivery-promise>span {
+      color: #176b4b;
+      font-weight: 900
+    }
+
+    .delivery-promise strong,
+    .delivery-promise small {
+      display: block
+    }
+
+    .delivery-promise strong {
+      font-size: .75rem
+    }
+
+    .delivery-promise small {
+      font-size: .68rem;
+      color: #687468;
+      margin-top: 3px
+    }
+
+    .row {
+      border-color: #e8ece5;
+      border-radius: 15px
+    }
+
+    .empty {
+      background: #fff;
+      border-color: #dfe7dc
+    }
+
+    .chat-launch {
+      background: var(--green);
+      box-shadow: 0 8px 24px #176b4b38
+    }
+
+    .chat-panel {
+      border-radius: 18px;
+      box-shadow: 0 15px 55px #142e1d2b
+    }
+
+    @media(max-width:1050px) {
+      .bar {
+        grid-template-columns: auto auto minmax(180px, 1fr);
+        gap: 14px
+      }
+
+      .header-actions {
+        grid-column: 1/-1;
+        justify-content: flex-end;
+        display: flex;
+        padding: 0 0 10px
+      }
+
+      .header-actions[hidden] {
+        display: none
+      }
+
+      .location-pill {
+        justify-self: start
+      }
+
+      .header-search {
+        grid-column: 1/-1;
+        grid-row: 2
+      }
+
+      .header-actions {
+        grid-row: 1;
+        grid-column: 3
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+      }
+
+      .promise-strip {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .promise-strip>div:nth-child(2) {
+        border-right: 0
+      }
+
+      .promise-strip>div:nth-child(-n+2) {
+        border-bottom: 1px solid #eef0ea
+      }
+
+      .hero .wrap {
+        gap: 25px
+      }
+
+      .hero-stats {
+        gap: 18px
+      }
+    }
+
+    @media(max-width:700px) {
+      .bar {
+        padding: 12px 16px 0;
+        grid-template-columns: 1fr auto;
+        gap: 10px
+      }
+
+      .logo {
+        font-size: 1.35rem
+      }
+
+      .logo i {
+        width: 37px;
+        height: 37px
+      }
+
+      .location-pill {
+        grid-column: 1/-1;
+        grid-row: 2;
+        width: max-content
+      }
+
+      .header-search {
+        grid-column: 1/-1;
+        grid-row: 3
+      }
+
+      .header-actions {
+        grid-column: 2;
+        grid-row: 1;
+        gap: 10px
+      }
+
+      .header-actions a span {
+        display: none
+      }
+
+      .header-actions .header-cart {
+        padding: 9px
+      }
+
+      .header-actions a:first-child {
+        font-size: 1.1rem
+      }
+
+      #mainNav {
+        grid-row: 4;
+        gap: 2px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-top: 7px
+      }
+
+      nav a {
+        padding: 10px 11px;
+        font-size: .8rem;
+        white-space: nowrap
+      }
+
+      .out {
+        margin-left: 0;
+        white-space: nowrap
+      }
+
+      .hero .wrap {
+        grid-template-columns: 1fr;
+        padding: 38px 18px 32px;
+        gap: 12px
+      }
+
+      .hero h1 {
+        font-size: clamp(2.55rem, 11vw, 3.5rem)
+      }
+
+      .hero p {
+        font-size: .98rem
+      }
+
+      .hero-visual {
+        min-height: 280px;
+        margin-top: 8px
+      }
+
+      .hero-photo-main {
+        height: 260px;
+        width: 78%
+      }
+
+      .float-top {
+        left: 0;
+        top: 10px
+      }
+
+      .float-bottom {
+        right: -2px;
+        bottom: 12px
+      }
+
+      .hero-sticker {
+        width: 66px;
+        height: 66px;
+        right: 2%;
+        top: 0;
+        font-size: .6rem
+      }
+
+      .hero-stats {
+        gap: 18px
+      }
+
+      .hero-stats strong {
+        font-size: 1.1rem
+      }
+
+      .hero-stats span {
+        font-size: .65rem
+      }
+
+      .wrap {
+        padding: 0 16px
+      }
+
+      .promise-strip {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 0
+      }
+
+      .promise-strip>div {
+        padding: 13px 10px;
+        gap: 8px
+      }
+
+      .promise-strip>div>span {
+        width: 32px;
+        height: 32px
+      }
+
+      .promise-strip strong {
+        font-size: .74rem
+      }
+
+      .promise-strip small {
+        font-size: .62rem
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px
+      }
+
+      .category-tile {
+        padding: 14px 10px;
+        gap: 8px
+      }
+
+      .category-emoji {
+        font-size: 1.7rem
+      }
+
+      .category-info strong {
+        font-size: .82rem
+      }
+
+      .category-info small {
+        font-size: .63rem
+      }
+
+      .sec {
+        padding: 32px 0
+      }
+
+      .sec-h {
+        align-items: start
+      }
+
+      .sec-h h2 {
+        font-size: 1.5rem
+      }
+
+      .text-link {
+        font-size: .75rem
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px
+      }
+
+      .pb {
+        padding: 11px
+      }
+
+      .pb h3 {
+        font-size: .88rem
+      }
+
+      .seller {
+        font-size: .69rem
+      }
+
+      .seller .btn {
+        font-size: .62rem;
+        padding: 4px 6px
+      }
+
+      .price {
+        font-size: 1.05rem
+      }
+
+      .product-tools {
+        flex-wrap: wrap
+      }
+
+      .product-tools>.btn:first-child {
+        min-width: 100%;
+      }
+
+      .product-tools .btn {
+        font-size: .69rem
+      }
+
+      .heart {
+        font-size: .68rem;
+        padding: 6px
+      }
+
+      .review-box {
+        display: none
+      }
+
+      .maker-banner {
+        padding: 20px 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 35px
+      }
+
+      .maker-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem
+      }
+
+      .maker-banner>div:nth-child(2) {
+        flex: 1;
+        min-width: 180px
+      }
+
+      .maker-banner h2 {
+        font-size: 1.25rem
+      }
+
+      .maker-banner p {
+        font-size: .78rem
+      }
+
+      .maker-button {
+        margin: 4px 0 0 56px
+      }
+
+      .cart {
+        grid-template-columns: 1fr
+      }
+
+      .row {
+        grid-template-columns: 54px 1fr auto;
+        gap: 9px
+      }
+
+      .row>:last-child {
+        grid-column: auto
+      }
+
+      .row .pimg {
+        width: 54px
+      }
+
+      .row .qty {
+        grid-column: 2;
+        grid-row: 2
+      }
+
+      .row>div:last-child {
+        grid-column: 3;
+        grid-row: 1/3;
+        flex-direction: column;
+        align-items: flex-end !important
+      }
+
+      .sum {
+        position: static
+      }
+
+      .login {
+        padding: 25px 16px
+      }
+
+      .lbox {
+        padding: 24px 19px
+      }
+
+      footer {
+        font-size: .72rem
+      }
+    }
+
+    @media(max-width:390px) {
+      .header-actions {
+        gap: 6px
+      }
+
+      .header-actions a {
+        font-size: .9rem
+      }
+
+      .hero-stats {
+        gap: 12px
+      }
+
+      .hero-note {
+        width: 100%
+      }
+
+      .grid {
+        gap: 8px
+      }
+
+      .category-info small {
+        display: none
+      }
+    }
   </style>
 </head>
 
 <body>
-  <header>
+  <header class="site-header">
     <div class="bar">
-      <a class="logo" href="#home" aria-label="LocalKart home"><i>🛍️</i>LocalKart</a>
+      <a class="logo" href="#home" aria-label="LocalKart home"><i>🛍</i><span>Local<span
+            class="logo-accent">Kart</span><small>SHOP LOCAL. LIVE BETTER.</small></span></a>
+      <div class="location-pill" aria-label="Delivery location"><span class="pin-icon">⌖</span><span><small>Delivering
+            around</small><strong>Belgaum, Karnataka</strong></span></div>
+      <form class="header-search" data-search role="search" id="headerSearch"><span aria-hidden="true">⌕</span><input
+          type="search" value="" placeholder="Search for products, brands and more"
+          aria-label="Search all products"><button type="submit">Search</button></form>
+      <div class="header-actions" id="headerTools" hidden>
+        <a href="#wishlist" aria-label="Wishlist">♡ <span>Wishlist</span></a>
+        <a href="#orders" aria-label="My orders">▤ <span>Orders</span></a>
+        <a href="#cart" class="header-cart" aria-label="Shopping cart">🛒 <span>Cart</span><b id="cartCount">0</b></a>
+      </div>
       <nav aria-label="Main" id="mainNav" hidden>
         <a href="#home" data-nav="home">Home</a>
-        <a href="#products" data-nav="products">Products</a>
-        <a href="#cart" data-nav="cart">Cart<span class="badge" id="cartCount">0</span></a>
+        <a href="#products" data-nav="products">Shop all</a>
+        <a href="#shop" data-nav="shop">Local shops</a>
         <a href="#orders" data-nav="orders" id="ordersLink">My Orders</a>
         <a href="#wishlist" data-nav="wishlist" id="wishlistLink">Wishlist</a>
-        <a href="#shop" data-nav="shop">Local Shops</a>
         <a href="#seller" data-nav="seller" id="sellerLink">Seller Dashboard</a>
         <button class="out" data-logout>Log out</button>
       </nav>
@@ -1065,6 +2397,8 @@
          POST   /api/orders               body: {customer,items,total}   (place order)
          PUT    /api/orders/<id>          body: {status}
     */
+    // Keep false for the standalone demo. Set true only after implementing the API
+    // with server-side authentication, role checks, validation, and database transactions.
     const USE_BACKEND = false;
     const API_BASE = 'http://localhost:5000/api';
     let CURRENT_SELLER = '';   // set from the logged-in seller's shop name
@@ -1081,7 +2415,9 @@
       try {
         const r = await fetch(API_BASE + path, { method, headers: { 'Content-Type': 'application/json' }, body: body ? JSON.stringify(body) : undefined });
         if (!r.ok) throw new Error(r.status);
-        return await r.json();
+        if (r.status === 204) return { ok: true };
+        const text = await r.text();
+        return text ? JSON.parse(text) : { ok: true };
       } catch (e) { toast('Could not reach the server. Showing saved data.'); return null; }
     }
 
@@ -1117,14 +2453,51 @@
       { id: 1002, customer: 'Rahul K.', items: 'Handwoven Table Runner × 2', seller: 'Meena Handlooms', total: 1100, status: 'Packed' },
       { id: 1003, customer: 'Divya S.', items: 'Bamboo Storage Basket × 1', seller: 'Meena Handlooms', total: 420, status: 'Delivered' }
     ];
-    const S = { user: null, mode: 'login', role: 'customer', err: '', products: [...SAMPLE_PRODUCTS], orders: [...SAMPLE_ORDERS], cart: [], cat: 'All', q: '', editing: null, nextId: 100, nextOrder: 1004, sort: 'featured', maxPrice: 5000, area: 'All', compare: [], wishlist: [], payment: 'Cash on Delivery' };
-    try { S.wishlist = JSON.parse(localStorage.getItem('lk_wishlist') || '[]'); } catch (e) { }
-    try { S.orders = JSON.parse(localStorage.getItem('lk_orders') || 'null') || S.orders; } catch (e) { }
-    function saveOrders() { try { localStorage.setItem('lk_orders', JSON.stringify(S.orders)); } catch (e) { } }
-    function saveWishlist() { try { localStorage.setItem('lk_wishlist', JSON.stringify(S.wishlist)); } catch (e) { } }
-    try { const c = JSON.parse(localStorage.getItem('lk_cart') || '[]'); if (Array.isArray(c)) S.cart = c; } catch (e) { }
-    try { const u = JSON.parse(localStorage.getItem('lk_user') || 'null'); if (u && u.name && u.role) { S.user = u; if (u.role === 'seller') CURRENT_SELLER = u.name; } } catch (e) { }
-    function saveCart() { try { localStorage.setItem('lk_cart', JSON.stringify(S.cart)); } catch (e) { } }
+    const S = { user: null, mode: 'login', role: 'customer', err: '', products: [...SAMPLE_PRODUCTS], orders: [...SAMPLE_ORDERS], cart: [], cat: 'All', q: '', editing: null, nextId: 100, nextOrder: 1004, sort: 'featured', maxPrice: 5000, area: 'All', compare: [], wishlist: [], payment: 'Cash on Delivery', checkout: { phone: '', address: '' } };
+    // Local storage is only a convenience for this browser-based demo, not secure storage.
+    try {
+      const savedProducts = JSON.parse(localStorage.getItem('lk_products') || 'null');
+      if (Array.isArray(savedProducts)) S.products = savedProducts;
+    } catch (e) { console.warn('Could not restore saved products.', e); }
+    try {
+      const savedOrders = JSON.parse(localStorage.getItem('lk_orders') || 'null');
+      if (Array.isArray(savedOrders)) S.orders = savedOrders;
+    } catch (e) { console.warn('Could not restore saved orders.', e); }
+    try {
+      const savedWishlist = JSON.parse(localStorage.getItem('lk_wishlist') || '[]');
+      if (Array.isArray(savedWishlist)) S.wishlist = savedWishlist.filter(Number.isFinite);
+    } catch (e) { console.warn('Could not restore wishlist.', e); }
+    try {
+      const u = JSON.parse(localStorage.getItem('lk_user') || 'null');
+      if (u && u.name && ['customer', 'seller'].includes(u.role)) {
+        S.user = { name: String(u.name), email: String(u.email || ''), role: u.role };
+        if (u.role === 'seller') CURRENT_SELLER = u.name;
+      }
+    } catch (e) { console.warn('Could not restore user.', e); }
+    S.nextId = Math.max(100, ...S.products.map(p => Number(p.id) || 0)) + 1;
+    S.nextOrder = Math.max(1003, ...S.orders.map(o => Number(o.id) || 0)) + 1;
+    try {
+      const savedCart = JSON.parse(localStorage.getItem('lk_cart') || '[]');
+      if (Array.isArray(savedCart)) {
+        S.cart = savedCart.map(item => {
+          const product = S.products.find(p => Number(p.id) === Number(item.id));
+          if (!product) return null;
+          const quantity = Math.max(1, Math.floor(Number(item.n) || 1));
+          return { ...product, n: Math.min(quantity, Math.max(0, Number(product.qty) || 0)) };
+        }).filter(item => item && item.n > 0);
+      }
+    } catch (e) { console.warn('Could not restore cart.', e); }
+    try {
+      const savedCheckout = JSON.parse(localStorage.getItem('lk_checkout') || 'null');
+      if (savedCheckout && typeof savedCheckout === 'object' && savedCheckout.email === (S.user?.email || '')) {
+        S.checkout = { phone: String(savedCheckout.phone || ''), address: String(savedCheckout.address || '') };
+      }
+    } catch (e) { console.warn('Could not restore checkout details.', e); }
+    function saveCheckout() { try { localStorage.setItem('lk_checkout', JSON.stringify({ ...S.checkout, email: S.user?.email || '' })); } catch (e) { toast('Could not save delivery details in this browser.'); } }
+    function saveProducts() { try { localStorage.setItem('lk_products', JSON.stringify(S.products)); } catch (e) { toast('Could not save products in this browser.'); } }
+    function saveOrders() { try { localStorage.setItem('lk_orders', JSON.stringify(S.orders)); } catch (e) { toast('Could not save orders in this browser.'); } }
+    function saveWishlist() { try { localStorage.setItem('lk_wishlist', JSON.stringify(S.wishlist)); } catch (e) { toast('Could not save wishlist in this browser.'); } }
+    function saveCart() { try { localStorage.setItem('lk_cart', JSON.stringify(S.cart)); } catch (e) { toast('Could not save cart in this browser.'); } }
 
     /* ================= HELPERS ================= */
     const $ = s => document.querySelector(s);
@@ -1148,7 +2521,7 @@
       const [k, l] = stock(p);
       const wished = S.wishlist.includes(p.id);
       const compared = S.compare.includes(p.id);
-      return `<article class="pc"><div class="pimg" style="background:${TINT[p.category] || '#eee'}">${img(p)}<span class="tag ${k}">${l}</span></div>
+      return `<article class="pc"><div class="pimg" style="background:${TINT[p.category] || '#eee'}">${img(p)}<span class="tag ${k}">${l}</span><span class="product-category">${esc(p.category)}</span></div>
  <div class="pb"><h3>${esc(p.name)}</h3><div class="seller">by <button class="btn alt sm" data-shop="${esc(p.seller)}">${esc(p.seller)}</button> · ${esc(p.area || 'Local area')}</div>
  <div class="rating">★ ${Number(p.rating || 0).toFixed(1)} <span class="small-muted">(${p.reviews || 0} reviews)</span></div><div class="price">${money(p.price)}</div>
  <div class="product-tools"><button class="btn" data-add="${p.id}" ${p.qty <= 0 ? 'disabled' : ''}>${p.qty <= 0 ? 'Sold out' : 'Add to Cart'}</button>
@@ -1168,14 +2541,22 @@
     /* ================= VIEWS ================= */
     function home() {
       const list = filtered().slice(0, 4);
-      return `<section class="hero"><div class="wrap"><div><h1>Shop local. Grow local.</h1>
- <p>Discover products from small shops in your city, all in one place.</p><p class="small-muted">Hackathon demo catalogue · shop and location details are sample data.</p>${searchBox()}</div>
- <div class="hero-art" aria-hidden="true"><span>🥻</span><span>🍬</span><span>🪔</span><span>🧺</span><span>🛍️</span><span>🧼</span></div></div></section>
- <div class="wrap"><section class="sec"><div class="sec-h"><h2>Browse by category</h2></div>${chips()}</section>
- <section class="sec" style="padding-top:0"><div class="sec-h"><h2>Shop of the day</h2><a href="#shop" class="btn alt sm" style="text-decoration:none">Explore local shops</a></div>
- <div class="shop-card"><div class="shop-mark">🌿</div><div style="flex:1"><h3>Nisarga Naturals</h3><p>Small-batch handmade wellness products · Camp</p><p class="small-muted">Demo shop highlight — explore its products and support local makers.</p></div><button class="btn" data-shop="Nisarga Naturals">Visit shop</button></div>
- <div class="sec-h"><h2>Fresh from local shops</h2><a href="#products" class="btn alt sm" style="text-decoration:none">View all products</a></div>
- ${list.length ? `<div class="grid">${list.map(card).join('')}</div>` : '<div class="empty">No products match your search.</div>'}</section></div>`;
+      const categoryTiles = [
+        ['Food', '🥭', 'Fresh & homemade', '#fff0d9'],
+        ['Clothing', '🧵', 'Made to be worn', '#e7edf9'],
+        ['Handicrafts', '🏺', 'Handmade with care', '#f8e7e0'],
+        ['Home', '🪴', 'Make it feel like home', '#e6f0e9'],
+        ['Beauty', '🌿', 'Natural everyday care', '#f2e7f4']
+      ];
+      return `<section class="hero"><div class="wrap hero-inner"><div class="hero-copy"><span class="eyebrow"><span></span> YOUR CITY. YOUR MAKERS.</span><h1>Good things are<br><em>closer than you think.</em></h1>
+        <p>Discover thoughtful finds from the small businesses and makers in your neighbourhood.</p><div class="hero-cta"><a href="#products" class="btn hero-button" style="text-decoration:none">Explore the marketplace <span>→</span></a><span class="hero-note">✦ Every purchase supports a local dream</span></div>
+        <div class="hero-stats"><div><strong>24+</strong><span>local finds</span></div><div><strong>10+</strong><span>neighbourhood makers</span></div><div><strong>100%</strong><span>community spirit</span></div></div></div>
+        <div class="hero-visual"><div class="hero-photo hero-photo-main"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Warm, locally crafted home decor"><div class="photo-caption"><span>THE LOCAL EDIT</span><strong>Made with a little more meaning.</strong></div></div><div class="hero-float float-top"><span>✦</span><div><strong>Shop small</strong><small>Make a big difference</small></div></div><div class="hero-float float-bottom"><span>♡</span><div><strong>Thoughtfully picked</strong><small>From makers near you</small></div></div><div class="hero-sticker">LOCAL<br>LOVE <span>♥</span></div></div></div></section>
+        <div class="wrap"><div class="promise-strip"><div><span>✓</span><p><strong>Local sellers</strong><small>Real neighbourhood businesses</small></p></div><div><span>♧</span><p><strong>Unique finds</strong><small>Products with a story</small></p></div><div><span>♡</span><p><strong>Shop with purpose</strong><small>Your order makes a difference</small></p></div><div><span>↗</span><p><strong>Easy shopping</strong><small>Simple cart and checkout</small></p></div></div>
+        <section class="sec category-section"><div class="sec-h"><div><span class="section-kicker">FIND YOUR FAVOURITE</span><h2>What are you in the mood for?</h2><p class="section-sub">A little something for every part of your day.</p></div><a href="#products" class="text-link">View all categories <span>→</span></a></div><div class="category-grid">${categoryTiles.map(([cat, emoji, desc, bg]) => `<button class="category-tile" data-cat="${cat}" style="--tile-bg:${bg}"><span class="category-emoji">${emoji}</span><span class="category-info"><strong>${cat}</strong><small>${desc}</small></span><span class="category-arrow">↗</span></button>`).join('')}</div></section>
+        <section class="sec featured-section"><div class="sec-h"><div><span class="section-kicker">HANDPICKED FOR YOU</span><h2>Little local favourites</h2><p class="section-sub">Customer-loved picks from nearby makers.</p></div><a href="#products" class="text-link">Shop all products <span>→</span></a></div>${list.length ? `<div class="grid">${list.map(card).join('')}</div>` : '<div class="empty">No products match your search.</div>'}</section>
+        <section class="maker-banner"><div class="maker-icon">✳</div><div><span class="section-kicker">MEET YOUR NEIGHBOURHOOD MAKERS</span><h2>Small shops. Big stories.</h2><p>Behind every product is a person, a craft, and a dream worth supporting.</p></div><a href="#shop" class="btn maker-button" style="text-decoration:none">Meet the makers <span>→</span></a></section>
+        </div>`;
     }
     function products() {
       const list = filtered();
@@ -1183,6 +2564,12 @@
  <div style="height:18px"></div>${list.length ? `<div class="grid">${list.map(card).join('')}</div>` : '<div class="empty">No products found. Try another category or search.</div>'}</section></div>`;
     }
     function cart() {
+      // Always display current catalogue prices and names, not stale values copied into old carts.
+      S.cart = S.cart.map(item => {
+        const product = S.products.find(p => Number(p.id) === Number(item.id));
+        return product ? { ...product, n: Math.min(Math.max(1, Math.floor(Number(item.n) || 1)), Math.max(0, Number(product.qty) || 0)) } : null;
+      }).filter(item => item && item.n > 0);
+      saveCart();
       const total = S.cart.reduce((s, i) => s + i.price * i.n, 0);
       if (!S.cart.length) return `<div class="wrap"><section class="sec"><h2 style="margin-bottom:16px">Your cart</h2><div class="empty">Your cart is empty.<br><br><a class="btn" href="#products" style="text-decoration:none;display:inline-block">Browse products</a></div></section></div>`;
       return `<div class="wrap"><section class="sec"><h2 style="margin-bottom:18px">Your cart</h2><div class="cart"><div>
@@ -1194,21 +2581,36 @@
   <div><span>Items</span><span>${S.cart.reduce((s, i) => s + i.n, 0)}</span></div>
   <div><span>Delivery</span><span>Free</span></div>
   <div class="tot"><span>Total</span><span>${money(total)}</span></div>
-  <label for="cust">Your name</label><input id="cust" value="${esc(S.user ? S.user.name : '')}" placeholder="Name for the order" autocomplete="name">
-  <button class="btn" data-order>Place Order</button></aside></div></section></div>`;
+  <h3 style="margin-top:18px">Delivery details</h3>
+  <label for="cust">Full name *</label><input id="cust" value="${esc(S.user ? S.user.name : '')}" placeholder="Name for delivery" autocomplete="name" required>
+  <label for="custPhone">Phone number *</label><input id="custPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" value="${esc(S.checkout.phone)}" placeholder="10-digit mobile number" required aria-describedby="phoneHelp">
+  <small id="phoneHelp" class="small-muted">Enter a valid Indian mobile number, with or without +91.</small>
+  <label for="custAddress">Full delivery address *</label><textarea id="custAddress" autocomplete="street-address" placeholder="House/flat number, street, area, city, state and PIN code" minlength="10" required>${esc(S.checkout.address)}</textarea>
+  <label for="payment">Payment method</label><select id="payment"><option value="Cash on Delivery" ${S.payment === 'Cash on Delivery' ? 'selected' : ''}>Cash on Delivery</option><option value="UPI (demo only)" ${S.payment === 'UPI (demo only)' ? 'selected' : ''}>UPI (demo preview)</option></select>
+  <small class="small-muted payment-note">Demo checkout only — no payment is collected. UPI is a preview, not a live payment gateway.</small>
+  <div class="delivery-promise"><span>✓</span><div><strong>Delivery details protected in this demo</strong><small>Estimated delivery: 2–5 days (sample estimate)</small></div></div>
+  <button class="btn" data-order>Place Order · ${money(total)}</button></aside></div></section></div>`;
     }
     function seller() {
-      const e = S.editing ? S.products.find(p => p.id === S.editing) : null;
+      const e = S.editing ? S.products.find(p => p.id === S.editing && p.seller === CURRENT_SELLER) : null;
       const mine = S.products.filter(p => p.seller === CURRENT_SELLER);
-      const orders = S.orders.filter(o => o.seller === CURRENT_SELLER || o.seller === 'Multiple');
-      const revenue = orders.filter(o => o.status === 'Delivered').reduce((n, o) => n + Number(o.total || 0), 0);
+      const sellerLines = o => Array.isArray(o.lines) ? o.lines.filter(line => line.seller === CURRENT_SELLER) : [];
+      const orders = S.orders.filter(o => o.seller === CURRENT_SELLER || sellerLines(o).length > 0);
+      const sellerOrderTotal = o => Array.isArray(o.lines) ? sellerLines(o).reduce((sum, line) => sum + Number(line.price || 0) * Number(line.quantity || 0), 0) : (o.seller === CURRENT_SELLER ? Number(o.total || 0) : 0);
+      const revenue = orders.filter(o => o.status === 'Delivered').reduce((n, o) => n + sellerOrderTotal(o), 0);
       const lowStock = mine.filter(p => p.qty > 0 && p.qty <= 5).length;
-      const monthly = [3200, 4600, 3900, 6100, 5200, Math.max(1800, revenue || 3500)];
-      const topProducts = mine.map(p => ({ ...p, sold: orders.reduce((n, o) => n + (String(o.items || '').includes(p.name) ? 1 : 0), 0) })).sort((a, b) => b.sold - a.sold).slice(0, 3);
+      const monthly = Array(6).fill(0);
+      orders.filter(o => o.status === 'Delivered').forEach(o => {
+        const d = new Date(o.createdAt || 0);
+        const now = new Date();
+        const monthDiff = (now.getFullYear() - d.getFullYear()) * 12 + now.getMonth() - d.getMonth();
+        if (!Number.isNaN(d.getTime()) && monthDiff >= 0 && monthDiff < 6) monthly[5 - monthDiff] += sellerOrderTotal(o);
+      });
+      const topProducts = mine.map(p => ({ ...p, sold: orders.reduce((n, o) => n + (Array.isArray(o.lines) ? sellerLines(o).filter(line => Number(line.productId) === Number(p.id)).reduce((sum, line) => sum + Number(line.quantity || 0), 0) : (String(o.items || '').includes(p.name) && o.seller === CURRENT_SELLER ? 1 : 0)), 0) })).sort((a, b) => b.sold - a.sold).slice(0, 3);
       return `<div class="wrap"><section class="sec"><div class="sec-h"><h2>Seller dashboard · ${esc(CURRENT_SELLER)}</h2></div>
  <div class="stats"><div class="stat"><span class="small-muted">Products listed</span><strong>${mine.length}</strong></div><div class="stat"><span class="small-muted">Orders</span><strong>${orders.length}</strong></div><div class="stat"><span class="small-muted">Delivered sales</span><strong>${money(revenue)}</strong></div><div class="stat"><span class="small-muted">Low-stock items</span><strong>${lowStock}</strong></div></div>
- <div class="panel"><h2>Sales trend · demo data</h2><p class="small-muted">Illustrative monthly sales for the demo, not connected to live payment records.</p><div class="chart">${monthly.map((v, i) => `<div class="bar-col"><i style="height:${Math.max(8, v / 70)}px"></i><span>${['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'][i]}</span></div>`).join('')}</div></div>
- <div class="panel"><h2>Top products</h2><p class="small-muted">Based on matching sample order item names; connect backend order lines for accurate sales counts.</p>${topProducts.length ? topProducts.map(p => `<div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)"><span>${esc(p.name)}</span><strong>${p.sold} matched order(s)</strong></div>`).join('') : 'No products listed yet.'}</div>
+ <div class="panel"><h2>Sales trend · last 6 months</h2><p class="small-muted">Calculated from delivered orders saved in this browser. Historical sample orders without dates are excluded.</p><div class="chart">${monthly.map((v, i) => `<div class="bar-col"><i title="${money(v)}" style="height:${Math.max(8, v / Math.max(1, ...monthly) * 120)}px"></i><span>${new Date(new Date().getFullYear(), new Date().getMonth() - 5 + i, 1).toLocaleDateString('en-IN', { month: 'short' })}</span></div>`).join('')}</div></div>
+ <div class="panel"><h2>Top products</h2><p class="small-muted">Calculated from saved order line items where available.</p>${topProducts.length ? topProducts.map(p => `<div style="display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)"><span>${esc(p.name)}</span><strong>${p.sold} matched order(s)</strong></div>`).join('') : 'No products listed yet.'}</div>
  <div class="dash"><div class="panel"><h2>${e ? 'Edit product' : 'Add a product'}</h2>
   <form id="pf"><label>Product name<input name="name" required value="${e ? esc(e.name) : ''}"></label>
   <div class="two"><label>Price (₹)<input name="price" type="number" min="1" required value="${e ? e.price : ''}"></label>
@@ -1219,14 +2621,17 @@
  <div><div class="panel"><h2>Your products</h2>${mine.length ? `<div class="tw"><table><thead><tr><th>Product</th><th>Price</th><th>Stock</th><th></th></tr></thead><tbody>
   ${mine.map(p => `<tr><td><div class="pimg" style="background:${TINT[p.category] || '#eee'}">${img(p)}</div>${esc(p.name)}</td><td>${money(p.price)}</td><td>${p.qty}</td>
   <td><div class="acts"><button class="btn alt sm" data-edit="${p.id}">Edit</button><button class="btn del sm" data-del="${p.id}">Delete</button></div></td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">You have not added any products yet.</div>'}</div>
- <div class="panel"><h2>Customer orders</h2>${orders.length ? `<div class="tw"><table><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th></tr></thead><tbody>
-  ${orders.map(o => `<tr><td>#${o.id}</td><td>${esc(o.customer)}</td><td>${esc(o.items)}</td><td>${money(o.total)}</td>
-  <td><select data-status="${o.id}" aria-label="Order ${o.id} status">${['Pending', 'Packed', 'Delivered'].map(s => `<option ${o.status === s ? 'selected' : ''}>${s}</option>`).join('')}</select></td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">No orders yet.</div>'}</div></div></div></section></div>`;
+ <div class="panel"><h2>Customer orders</h2>${orders.length ? `<div class="tw"><table><thead><tr><th>Order</th><th>Customer</th><th>Phone / delivery address</th><th>Items</th><th>Total</th><th>Status</th></tr></thead><tbody>
+  ${orders.map(o => {
+        const lines = sellerLines(o); const itemText = lines.length ? lines.map(line => `${line.name} × ${line.quantity}`).join(', ') : o.items; return `<tr><td>#${o.id}</td><td>${esc(o.customer)}</td><td>${esc(o.phone || 'Not provided')}<br>${esc(o.deliveryAddress || 'Not provided')}</td><td>${esc(itemText || '')}</td><td>${money(sellerOrderTotal(o))}</td>
+  <td><select data-status="${o.id}" aria-label="Order ${o.id} status">${['Pending', 'Packed', 'Delivered'].map(s => `<option ${o.status === s ? 'selected' : ''}>${s}</option>`).join('')}</select></td></tr>`;
+      }).join('')}</tbody></table></div>` : '<div class="empty">No orders yet.</div>'}</div></div></div></section></div>`;
     }
 
     function myOrders() {
+      if (!S.user || S.user.role !== 'customer') return `<div class="wrap"><section class="sec"><h2>My Orders</h2><div class="empty">Customer order history is available from a customer account.</div></section></div>`;
       const mine = S.orders.filter(o => o.customer === S.user.name || o.customer === S.user.email || o.customerEmail === S.user.email);
-      return `<div class="wrap"><section class="sec"><h2>My Orders</h2><p class="small-muted">Track orders placed from this account.</p>${mine.length ? `<div class="panel"><div class="tw"><table><thead><tr><th>Order</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead><tbody>${mine.map(o => `<tr><td>#${o.id}</td><td>${esc(o.items)}</td><td>${money(o.total)}</td><td>${esc(o.payment || 'Cash on Delivery')}</td><td><span class="st ${esc(o.status)}">${esc(o.status)}</span></td></tr>`).join('')}</tbody></table></div></div>` : '<div class="empty">No orders yet. Your placed orders will appear here.</div>'}</section></div>`;
+      return `<div class="wrap"><section class="sec"><h2>My Orders</h2><p class="small-muted">Track orders placed from this account.</p>${mine.length ? `<div class="panel"><div class="tw"><table><thead><tr><th>Order</th><th>Items</th><th>Total</th><th>Payment</th><th>Delivery details</th><th>Status</th></tr></thead><tbody>${mine.map(o => `<tr><td>#${o.id}</td><td>${esc(o.items)}</td><td>${money(o.total)}</td><td>${esc(o.payment || 'Cash on Delivery')}</td><td>${esc(o.phone || '')}<br>${esc(o.deliveryAddress || '')}</td><td><span class="st ${esc(o.status)}">${esc(o.status)}</span></td></tr>`).join('')}</tbody></table></div></div>` : '<div class="empty">No orders yet. Your placed orders will appear here.</div>'}</section></div>`;
     }
     function wishlistView() {
       const list = S.products.filter(p => S.wishlist.includes(p.id));
@@ -1283,7 +2688,7 @@
   <div class="err" role="alert">${esc(S.err)}</div>
   <button class="btn" type="submit">${reg ? 'Create account' : 'Log in'}</button></form>
  <button class="swap" data-mode="${reg ? 'login' : 'register'}">${reg ? 'Already have an account? Log in' : 'New here? Create an account'}</button>
- ${USE_BACKEND ? '' : '<div class="hint">Demo: use any email and password. Use <b>seller@localkart.in</b> as a Seller to see the sample store.</div>'}</div></section>`;
+ ${USE_BACKEND ? '' : '<div class="hint">Demo only: use any email and password. Use <b>seller@localkart.in</b> as a Seller to see the sample store. Accounts and roles are not secure until a real backend is connected.</div>'}</div></section>`;
     }
     async function doLogin(form) {
       const f = new FormData(form), email = (f.get('email') || '').trim(), pw = f.get('password') || '', reg = S.mode === 'register';
@@ -1297,7 +2702,7 @@
         const pre = email.split('@')[0];
         u = { name: reg ? name : (S.role === 'seller' && email.toLowerCase() === 'seller@localkart.in') ? 'Meena Handlooms' : pre.charAt(0).toUpperCase() + pre.slice(1), role: S.role };
       }
-      S.user = { name: u.name, role: u.role || S.role }; S.err = '';
+      S.user = { name: u.name || name || email.split('@')[0], email: u.email || email.toLowerCase(), role: u.role || S.role }; S.err = '';
       if (S.user.role === 'seller') CURRENT_SELLER = S.user.name;
       try { localStorage.setItem('lk_user', JSON.stringify(S.user)); } catch (e) { }
       location.hash = S.user.role === 'seller' ? '#seller' : '#home'; render();
@@ -1309,12 +2714,15 @@
     const VIEWS = { home, products, cart, seller, orders: myOrders, wishlist: wishlistView, shop: shopsView, compare: compareView };
     function render() {
       const out = !S.user;
-      $('#mainNav').hidden = out; $('#saleBar').hidden = out;
+      $('#mainNav').hidden = out; $('#saleBar').hidden = out; $('#headerTools').hidden = out;
+      const headerSearch = $('#headerSearch'); if (headerSearch) { headerSearch.hidden = out; const input = headerSearch.querySelector('input'); if (input) input.value = S.q; }
       if (out) { $('#view').innerHTML = login(); return; }
       $('#sellerLink').hidden = S.user.role !== 'seller';
       const r = (location.hash || '#home').slice(1); let v = VIEWS[r] ? r : 'home';
       if (r.startsWith('shop-')) { $('#view').innerHTML = shopProfile(decodeURIComponent(r.slice(5))); return; }
       if (v === 'seller' && S.user.role !== 'seller') v = 'home';
+      if (v === 'orders' && S.user.role === 'seller') v = 'seller';
+      if (v === 'cart' && S.user.role !== 'customer') v = 'home';
       $('#view').innerHTML = VIEWS[v]();
       document.querySelectorAll('[data-nav]').forEach(a => { a.classList.toggle('on', a.dataset.nav === v); a.toggleAttribute('aria-current', a.dataset.nav === v); });
       $('#cartCount').textContent = S.cart.reduce((s, i) => s + i.n, 0);
@@ -1331,41 +2739,101 @@
     /* ================= ACTIONS ================= */
     function addToCart(id) {
       const p = S.products.find(x => x.id === id); if (!p || p.qty <= 0) return;
-      const it = S.cart.find(x => x.id === id);
-      if (it) { if (it.n >= p.qty) return toast('Only ' + p.qty + ' available'); it.n++; } else S.cart.push({ ...p, n: 1 });
+      const it = S.cart.find(x => Number(x.id) === Number(id));
+      if (it) { it.price = p.price; it.name = p.name; it.seller = p.seller; if (it.n >= p.qty) return toast('Only ' + p.qty + ' available'); it.n++; } else S.cart.push({ ...p, n: 1 });
       saveCart(); render(); toast(p.name + ' added to cart');
     }
     function changeQty(id, d) {
-      const it = S.cart.find(x => x.id === id); const p = S.products.find(x => x.id === id); if (!it) return;
+      const it = S.cart.find(x => Number(x.id) === Number(id)); const p = S.products.find(x => Number(x.id) === Number(id)); if (!it || !p) return;
+      it.price = p.price; it.name = p.name; it.seller = p.seller;
       const n = it.n + d; if (n < 1) return;
       if (p && n > p.qty) return toast('Only ' + p.qty + ' available');
       it.n = n; saveCart(); render();
     }
     async function placeOrder() {
-      const name = ($('#cust').value || '').trim();
-      if (!name) { $('#cust').focus(); return toast('Please enter your name to place the order'); }
-      const total = S.cart.reduce((s, i) => s + i.price * i.n, 0);
+      if (!S.user || S.user.role !== 'customer') return toast('Log in as a customer to place an order.');
+      if (!S.cart.length) return toast('Your cart is empty. Add a product first.');
+      const customerField = $('#cust');
+      const name = (customerField?.value || '').trim();
+      if (!name) { customerField?.focus(); return toast('Please enter your name to place the order.'); }
+      const phoneField = $('#custPhone');
+      const phone = (phoneField?.value || '').trim();
+      const phoneDigits = phone.replace(/\D/g, '');
+      if (!/^(?:91)?[6-9]\d{9}$/.test(phoneDigits)) { phoneField?.focus(); return toast('Please enter a valid 10-digit Indian mobile number.'); }
+      const addressField = $('#custAddress');
+      const deliveryAddress = (addressField?.value || '').trim();
+      if (deliveryAddress.length < 10) { addressField?.focus(); return toast('Please enter your complete delivery address, including area and PIN code.'); }
+      S.checkout = { phone, address: deliveryAddress }; saveCheckout();
+      // Re-read every item from the current catalogue so stale cart prices/stock cannot be used.
+      const lines = [];
+      for (const item of S.cart) {
+        const product = S.products.find(p => Number(p.id) === Number(item.id));
+        const quantity = Math.floor(Number(item.n));
+        if (!product) return toast('A product in your cart is no longer available. Remove it and try again.');
+        if (!Number.isInteger(quantity) || quantity < 1) return toast('Please check the quantities in your cart.');
+        if (quantity > Number(product.qty)) return toast(`Only ${product.qty} of “${product.name}” are available. Update your cart.`);
+        lines.push({ productId: product.id, name: product.name, seller: product.seller, price: Number(product.price), quantity });
+      }
+      const total = lines.reduce((sum, line) => sum + line.price * line.quantity, 0);
       S.payment = ($('#payment') || {}).value || S.payment;
-      const order = { customer: name, customerEmail: S.user.email || '', items: S.cart.map(i => i.name + ' × ' + i.n).join(', '), seller: 'Multiple', total, payment: S.payment, status: 'Pending' };
+      const sellers = [...new Set(lines.map(line => line.seller))];
+      const order = {
+        customer: name, customerEmail: S.user.email || '', phone, deliveryAddress,
+        items: lines.map(line => `${line.name} × ${line.quantity}`).join(', '),
+        lines, seller: sellers.length === 1 ? sellers[0] : 'Multiple', total,
+        payment: S.payment, status: 'Pending', createdAt: new Date().toISOString()
+      };
       const saved = await api('POST', '/orders', order);
+      if (USE_BACKEND && !saved) return toast('Order could not be saved. Your cart has been kept. Please try again.');
       order.id = saved && saved.id ? saved.id : S.nextOrder++;
-      S.cart.forEach(i => { const p = S.products.find(x => x.id === i.id); if (p) p.qty = Math.max(0, p.qty - i.n); });
-      S.orders.unshift(order); saveOrders(); S.cart = []; saveCart(); location.hash = '#orders'; render();
+      lines.forEach(line => {
+        const product = S.products.find(p => Number(p.id) === Number(line.productId));
+        if (product) product.qty -= line.quantity;
+      });
+      S.orders.unshift(order); saveOrders(); saveProducts(); S.cart = []; saveCart();
+      location.hash = '#orders'; render();
       toast('Order #' + order.id + ' placed. Thank you for shopping local!');
     }
     function readFile(f) { return new Promise(res => { if (!f || !f.size) return res(null); const r = new FileReader(); r.onload = () => res(r.result); r.onerror = () => res(null); r.readAsDataURL(f); }); }
     async function saveProduct(form) {
-      const f = new FormData(form); const e = S.editing ? S.products.find(p => p.id === S.editing) : null;
-      const pic = await readFile(f.get('image'));
-      const data = { name: f.get('name').trim(), price: +f.get('price'), qty: +f.get('qty'), category: f.get('category'), seller: CURRENT_SELLER, area: (e && e.area) || 'Belgaum', rating: (e && e.rating) || 0, reviews: (e && e.reviews) || 0, img: pic || (e ? e.img : 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80') };
-      if (e) { await api('PUT', '/products/' + e.id, data); Object.assign(e, data); toast('Product updated'); }
-      else { const saved = await api('POST', '/products', data); data.id = saved && saved.id ? saved.id : S.nextId++; S.products.unshift(data); toast('Product added'); }
-      S.editing = null; render();
+      if (!S.user || S.user.role !== 'seller' || !CURRENT_SELLER) return toast('Only a logged-in seller can manage products.');
+      const f = new FormData(form);
+      const name = String(f.get('name') || '').trim();
+      const price = Number(f.get('price')); const qty = Number(f.get('qty'));
+      const file = f.get('image');
+      const e = S.editing ? S.products.find(p => Number(p.id) === Number(S.editing) && p.seller === CURRENT_SELLER) : null;
+      if (!name) return toast('Enter a product name.');
+      if (!Number.isFinite(price) || price <= 0) return toast('Price must be greater than zero.');
+      if (!Number.isInteger(qty) || qty < 0) return toast('Quantity must be a whole number, zero or higher.');
+      if (file && file.size > 2 * 1024 * 1024) return toast('Choose an image smaller than 2 MB.');
+      if (S.editing && !e) { S.editing = null; return toast('You can only edit your own products.'); }
+      const pic = await readFile(file);
+      if (file && file.size && !pic) return toast('The selected image could not be read.');
+      const data = { name, price, qty, category: String(f.get('category') || 'Home'), seller: CURRENT_SELLER, area: (e && e.area) || 'Belgaum', rating: (e && e.rating) || 0, reviews: (e && e.reviews) || 0, img: pic || (e ? e.img : 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80') };
+      if (e) {
+        const saved = await api('PUT', '/products/' + e.id, data);
+        if (USE_BACKEND && !saved) return toast('Product update failed. Please try again.');
+        Object.assign(e, data); toast('Product updated');
+      } else {
+        const saved = await api('POST', '/products', data);
+        if (USE_BACKEND && !saved) return toast('Product could not be added. Please try again.');
+        data.id = saved && saved.id ? saved.id : S.nextId++; S.products.unshift(data); toast('Product added');
+      }
+      saveProducts(); S.editing = null; render();
     }
     async function deleteProduct(id) {
-      const p = S.products.find(x => x.id === id); if (!p || !confirm('Delete “' + p.name + '”?')) return;
-      await api('DELETE', '/products/' + id);
-      S.products = S.products.filter(x => x.id !== id); S.cart = S.cart.filter(x => x.id !== id); saveCart(); render(); toast('Product deleted');
+      if (!S.user || S.user.role !== 'seller') return toast('Only a seller can manage products.');
+      const p = S.products.find(x => Number(x.id) === Number(id));
+      if (!p) return;
+      if (p.seller !== CURRENT_SELLER) return toast('You can only delete your own products.');
+      if (!confirm('Delete “' + p.name + '”?')) return;
+      const result = await api('DELETE', '/products/' + id);
+      if (USE_BACKEND && result === null) return toast('Product deletion failed. Please try again.');
+      S.products = S.products.filter(x => Number(x.id) !== Number(id));
+      S.wishlist = S.wishlist.filter(x => Number(x) !== Number(id));
+      S.compare = S.compare.filter(x => Number(x) !== Number(id));
+      S.cart = S.cart.filter(i => Number(i.id) !== Number(id));
+      saveProducts(); saveWishlist(); saveCart(); render(); toast('Product deleted');
     }
 
     document.addEventListener('click', e => {
@@ -1373,20 +2841,20 @@
       if (t.hasAttribute('data-logout')) logout();
       else if (d.role) { S.role = d.role; S.err = ''; render(); }
       else if (d.mode) { S.mode = d.mode; S.err = ''; render(); }
-      else if (d.add) addToCart(+d.add);
-      else if (d.cat) { S.cat = d.cat; render(); }
-      else if (d.wish) { const id = +d.wish; S.wishlist = S.wishlist.includes(id) ? S.wishlist.filter(x => x !== id) : [...S.wishlist, id]; saveWishlist(); render(); }
+      else if (d.add) { if (!S.user || S.user.role !== 'customer') return toast('Log in as a customer to add items to your cart.'); addToCart(+d.add); }
+      else if (d.cat) { S.cat = d.cat; if (location.hash !== '#products') location.hash = '#products'; render(); }
+      else if (d.wish) { if (!S.user || S.user.role !== 'customer') return toast('Log in as a customer to use your wishlist.'); const id = +d.wish; S.wishlist = S.wishlist.includes(id) ? S.wishlist.filter(x => x !== id) : [...S.wishlist, id]; saveWishlist(); render(); }
       else if (d.compare) { const id = +d.compare; if (S.compare.includes(id)) S.compare = S.compare.filter(x => x !== id); else if (S.compare.length >= 3) toast('Compare up to 3 products'); else S.compare.push(id); render(); }
       else if (t.hasAttribute('data-showcompare')) { location.hash = '#compare'; }
       else if (t.hasAttribute('data-clearcompare')) { S.compare = []; render(); }
       else if (d.shop) { location.hash = '#shop-' + encodeURIComponent(d.shop); render(); }
       else if (d.goto) { location.hash = '#' + d.goto; }
-      else if (d.review) { const box = t.parentElement.querySelector('input'); const rating = Number(box.value); const p = S.products.find(x => x.id === +d.review); if (!rating || rating < 1 || rating > 5) toast('Enter a rating from 1 to 5'); else { p.rating = Number((((p.rating || 0) * (p.reviews || 0) + rating) / ((p.reviews || 0) + 1)).toFixed(1)); p.reviews = (p.reviews || 0) + 1; render(); toast('Thanks for rating this product!'); } }
+      else if (d.review) { if (!S.user || S.user.role !== 'customer') return toast('Log in as a customer to rate products.'); const box = t.parentElement.querySelector('input'); const rating = Number(box.value); const p = S.products.find(x => x.id === +d.review); if (!rating || rating < 1 || rating > 5) toast('Enter a rating from 1 to 5'); else { p.rating = Number((((p.rating || 0) * (p.reviews || 0) + rating) / ((p.reviews || 0) + 1)).toFixed(1)); p.reviews = (p.reviews || 0) + 1; saveProducts(); render(); toast('Thanks for rating this product!'); } }
       else if (d.inc) changeQty(+d.inc, 1);
       else if (d.dec) changeQty(+d.dec, -1);
       else if (d.rm) { S.cart = S.cart.filter(i => i.id !== +d.rm); saveCart(); render(); }
       else if (t.hasAttribute('data-order')) placeOrder();
-      else if (d.edit) { S.editing = +d.edit; render(); window.scrollTo(0, 0); }
+      else if (d.edit) { const p = S.products.find(x => Number(x.id) === Number(d.edit)); if (!S.user || S.user.role !== 'seller' || !p || p.seller !== CURRENT_SELLER) return toast('You can only edit your own products.'); S.editing = +d.edit; render(); window.scrollTo(0, 0); }
       else if (t.hasAttribute('data-cancel')) { S.editing = null; render(); }
       else if (d.del) deleteProduct(+d.del);
     });
@@ -1394,19 +2862,36 @@
       e.preventDefault();
       if (e.target.id === 'lf') doLogin(e.target);
       else if (e.target.id === 'pf') saveProduct(e.target);
-      else if (e.target.hasAttribute('data-search')) { S.q = e.target.querySelector('input').value; if (location.hash !== '#products' && location.hash !== '#home' && location.hash !== '') location.hash = '#products'; render(); }
+      else if (e.target.hasAttribute('data-search')) { S.q = e.target.querySelector('input').value; if (e.target.id === 'headerSearch' || (location.hash !== '#products' && location.hash !== '#home' && location.hash !== '')) location.hash = '#products'; render(); }
     });
     document.addEventListener('change', async e => {
       if (e.target.id === 'sortProducts') { S.sort = e.target.value; render(); }
       if (e.target.id === 'priceFilter') { S.maxPrice = +e.target.value; render(); }
       if (e.target.id === 'areaFilter') { S.area = e.target.value; render(); }
       if (e.target.id === 'payment') S.payment = e.target.value;
-      if (e.target.dataset.status) { const o = S.orders.find(x => x.id === +e.target.dataset.status); o.status = e.target.value; await api('PUT', '/orders/' + o.id, { status: o.status }); saveOrders(); toast('Order #' + o.id + ' marked ' + o.status); }
+      if (e.target.dataset.status) {
+        if (!S.user || S.user.role !== 'seller') { render(); return toast('Only sellers can update order status.'); }
+        const o = S.orders.find(x => Number(x.id) === Number(e.target.dataset.status));
+        const ownsOrder = o && (o.seller === CURRENT_SELLER || (Array.isArray(o.lines) && o.lines.some(line => line.seller === CURRENT_SELLER)));
+        if (!ownsOrder) { render(); return toast('You can only update orders containing your products.'); }
+        const previous = o.status; o.status = e.target.value;
+        const result = await api('PUT', '/orders/' + o.id, { status: o.status });
+        if (USE_BACKEND && !result) { o.status = previous; render(); return toast('Could not update the order status.'); }
+        saveOrders(); toast('Order #' + o.id + ' marked ' + o.status);
+      }
     });
 
     /* initial load: fetch real data if backend is on */
     (async () => {
-      if (USE_BACKEND) { const p = await api('GET', '/products'); if (p) S.products = p; const o = await api('GET', '/orders'); if (o) S.orders = o; }
+      if (USE_BACKEND) {
+        const p = await api('GET', '/products'); if (Array.isArray(p)) S.products = p;
+        const o = await api('GET', '/orders'); if (Array.isArray(o)) S.orders = o;
+        S.cart = S.cart.map(item => {
+          const product = S.products.find(p => Number(p.id) === Number(item.id));
+          return product ? { ...product, n: Math.min(Math.max(1, Math.floor(Number(item.n) || 1)), Math.max(0, Number(product.qty) || 0)) } : null;
+        }).filter(item => item && item.n > 0);
+        saveCart();
+      }
       render();
     })();
   </script>
